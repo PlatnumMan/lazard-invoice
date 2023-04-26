@@ -4,7 +4,7 @@ import Handlebars from 'handlebars';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import transpoter from '../helpers/emailTransport.js';
-import { systemLogs } from './utils/Logger.js';
+import { systemLogs } from '../utils/Logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

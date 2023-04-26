@@ -77,11 +77,7 @@ const userSchema = new Schema(
     bussinessName: String,
     phoneNumber: {
       type: String,
-      default: '+1 000 000 0000',
-      validate: [
-        validator.isMobilePhone,
-        'Phone number must be in the format +1 000 000 0000',
-      ],
+      default: '+10000000000',
     },
     address: String,
     city: String,
