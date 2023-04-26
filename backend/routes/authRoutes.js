@@ -8,6 +8,7 @@ import {
   resetPassword,
   sendPasswordResetEmailRequest,
 } from '../controllers/auth/passwordResetController.js';
+import logoutUser from '../controllers/auth/logoutController.js';
 import { loginLimiter } from '../middleware/apiLimiter.js';
 
 const router = express.Router();
@@ -25,5 +26,7 @@ router.post('/resend_email_token', resendVerifyEmail);
 router.post('/reset_password_request', sendPasswordResetEmailRequest);
 
 router.post('/reset_password', resetPassword);
+
+router.get('/logout', logoutUser);
 
 export default router;
