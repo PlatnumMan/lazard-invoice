@@ -20,7 +20,7 @@ const NotFound = () => {
             mt: '14rem',
           }}
         >
-          404
+          404 Not Found
         </Typography>
         <Box>
           <FaHeartBroken className="broken-heart" />
