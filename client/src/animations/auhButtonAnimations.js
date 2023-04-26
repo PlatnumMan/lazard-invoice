@@ -4,7 +4,7 @@ export default function AuthButtonAnimation({ children, type }) {
   switch (type) {
     default:
       return (
-        <motion.div whileHover={{ scale: 1.5 }} whileTap={{ scale: 0.9 }}>
+        <motion.div whileHover={{ scale: 1.0 }} whileTap={{ scale: 0.9 }}>
           {children}
         </motion.div>
       );
