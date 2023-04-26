@@ -11,6 +11,7 @@ import HomePage from './pages/HomePage';
 import NotFound from './components/NotFound';
 import RegisterPage from './features/auth/pages/RegisterPage';
 import VerifiedPage from './features/auth/pages/VerifiedPage';
+import LoginPage from './features/auth/pages/LoginPage';
 
 const App = () => {
   useTitle('Lazard Invoice - Home');
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="register" element={<RegisterPage />} />
+          <Route path="login" element={<LoginPage />} />
           <Route path="auth/verify" element={<VerifiedPage />} />
 
           <Route path="*" element={<NotFound />} />

@@ -82,6 +82,7 @@ const RegisterPage = () => {
                   borderColor: 'gray !important',
                   color: 'gray !important',
                   fontWeight: 500,
+                  borderRadius: '25px',
                 }}
                 variant="outlined"
                 disableRipple
