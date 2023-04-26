@@ -5,29 +5,27 @@ const ROLES = {
   Admin: ADMIN,
 };
 
-const checkRole =
-  (...allowedRoles) =>
-  (req, res, next) => {
-    return (req, res, next) => {
-      if (!req?.user && !req?.roles) {
-        res.status(401);
-        throw new Error('Unauthorized');
-      }
+const checkRole = (...allowedRoles) => {
+  return (req, res, next) => {
+    if (!req?.user && !req?.roles) {
+      res.status(401);
+      throw new Error('You are not authorized to use our platform');
+    }
 
-      const rolesArray = [...allowedRoles];
+    const rolesArray = [...allowedRoles];
 
-      const roleFound = req.roles
-        .map((role) => rolesArray.includes(role))
-        .find((value) => value === true);
+    const roleFound = req.roles
+      .map((role) => rolesArray.includes(role))
+      .find((value) => value === true);
 
-      if (!roleFound) {
-        res.status(401);
-        throw new Error('Unauthorized');
-      }
+    if (!roleFound) {
+      res.status(401);
+      throw new Error('You are not authorized to perform this request');
+    }
 
-      next();
-    };
+    next();
   };
+};
 
 const role = { ROLES, checkRole };
 
